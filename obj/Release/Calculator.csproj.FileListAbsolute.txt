@@ -1,0 +1,23 @@
+C:\Documents and Settings\HP Compaq\My Documents\for lean\for Studio_C#\Windows_Course\Задания по курсу С#_Windows\Calculator\bin\Release\Calculator.exe
+C:\Documents and Settings\HP Compaq\My Documents\for lean\for Studio_C#\Windows_Course\Задания по курсу С#_Windows\Calculator\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\HP Compaq\My Documents\for lean\for Studio_C#\Windows_Course\Задания по курсу С#_Windows\Calculator\obj\Release\Calculator.Calc.resources
+C:\Documents and Settings\HP Compaq\My Documents\for lean\for Studio_C#\Windows_Course\Задания по курсу С#_Windows\Calculator\obj\Release\Calculator.csproj.GenerateResource.Cache
+C:\Documents and Settings\HP Compaq\My Documents\for lean\for Studio_C#\Windows_Course\Задания по курсу С#_Windows\Calculator\obj\Release\Calculator.exe
+Z:\C#Student\WinC#\Задания по курсу С#_Windows\Calculator\obj\Release\Calculator.exe
+C:\Work\c#_WinForms\Prim_k_lec\Calculator\Calculator_starter\obj\Release\Calculator.exe
+C:\Work\c#_WinForms\Prim_k_lec\Calculator\Calculator_starter\bin\Release\Calculator.exe
+C:\Work\c#_WinForms\Prim_k_lec\Calculator\Calculator_starter\obj\Release\Calculator.Calc.resources
+C:\Work\c#_WinForms\Prim_k_lec\Calculator\Calculator_starter\obj\Release\Calculator.csproj.GenerateResource.Cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\bin\Release\Calculator.exe
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\obj\Release\Calculator.csprojAssemblyReference.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\obj\Release\Calculator.Calc.resources
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\obj\Release\Calculator.csproj.GenerateResource.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\obj\Release\Calculator.csproj.CoreCompileInputs.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Calculator_starter_2\Calculator_starter\obj\Release\Calculator.exe
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\bin\Release\Calculator.exe
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.csprojAssemblyReference.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.Calc.resources
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.csproj.GenerateResource.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.csproj.CoreCompileInputs.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.exe
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.QuadEq.resources
