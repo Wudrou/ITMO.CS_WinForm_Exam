@@ -21,3 +21,10 @@ D:\Учеба\ИТМО. Курсы\6. Разработка Windows-прилож�
 D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.csproj.CoreCompileInputs.cache
 D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.exe
 D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\Exam_calculator\obj\Release\Calculator.QuadEq.resources
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\bin\Release\Calculator.exe
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.csprojAssemblyReference.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.Calc.resources
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.QuadEq.resources
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.csproj.GenerateResource.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.csproj.CoreCompileInputs.cache
+D:\Учеба\ИТМО. Курсы\6. Разработка Windows-приложений на C#\ITMO.CS_WinForm_exam_calculator\obj\Release\Calculator.exe

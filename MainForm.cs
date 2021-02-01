@@ -643,24 +643,19 @@ namespace Calculator
 				mehanizmcalkulyatora.Sbros();
 				txtOutput.Text = "";
 			}
-            private void Proverka()
+            private void btn_vkvadrat_Click(object sender, EventArgs e)
             {
                 try
                 {
-                    Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                    return;
+                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                    txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 2)).ToString();
+                    mehanizmcalkulyatora.resultatOutput = "";
                 }
                 catch
                 {
                     mehanizmcalkulyatora.Sbros();
                     txtOutput.Text = "0";
                 }
-            }
-            private void btn_vkvadrat_Click(object sender, EventArgs e)
-            {
-                Proverka();
-                txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 2)).ToString();
-                mehanizmcalkulyatora.resultatOutput = "";
             }
             private void btn_vstepen_Click(object sender, EventArgs e)
             {
@@ -669,88 +664,113 @@ namespace Calculator
 
             private void btn_koren_Click(object sender, EventArgs e)
             {
-                Proverka();
-                if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
+                try
                 {
-                    txtOutput.Text = "Значение не может быть < 0";
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-                else
-                {
-                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                    txtOutput.Text = (Math.Sqrt(mehanizmcalkulyatora.pervoeChislo)).ToString();
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-            }
-
-            private void btn_obratnoe_Click(object sender, EventArgs e)
-            {
-                Proverka();
-                if (mehanizmcalkulyatora.resultatOutput == "0")
-                {
-                    txtOutput.Text = "Делить на ноль нельзя";
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-                else
-                {
-                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                    txtOutput.Text = (1 / mehanizmcalkulyatora.pervoeChislo).ToString();
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-            }
-            private void btn_korenkyb_Click(object sender, EventArgs e)
-            {
-                Proverka();
-                if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
-                {
-                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                    txtOutput.Text = "-" + Math.Pow(mehanizmcalkulyatora.pervoeChislo* mehanizmcalkulyatora.peremennayaMinus, 1.0 / 3.0).ToString();
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-                else
-                {
-                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                    txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 1.0/3.0)).ToString();
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-            }
-            private void btn_factorial_Click(object sender, EventArgs e)
-            {
-                Proverka();
-                mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
-                if (mehanizmcalkulyatora.pervoeChislo < 0)
-                {
-                    txtOutput.Text = "Значение не может быть < 0";
-                    mehanizmcalkulyatora.resultatOutput = "";
-                }
-                else
-                {
-                    if (Math.Floor(mehanizmcalkulyatora.pervoeChislo) != mehanizmcalkulyatora.pervoeChislo)
+                    if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
                     {
-                        txtOutput.Text = "Значение должно быть целым";
+                        txtOutput.Text = "Значение не может быть < 0";
                         mehanizmcalkulyatora.resultatOutput = "";
                     }
                     else
                     {
-                        //this.txtFactorial.Visible = true;
-                        int factorial = 1;
-                        for (int i = 1; i <= Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo); i++)
-                        {
-                            factorial *= i;
-                        }
-                        txtFactorial.Text = factorial.ToString();
-                        mehanizmcalkulyatora.Sbros();
-                        txtOutput.Text = "";
+                        mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                        txtOutput.Text = (Math.Sqrt(mehanizmcalkulyatora.pervoeChislo)).ToString();
+                        mehanizmcalkulyatora.resultatOutput = "";
                     }
+                }
+                catch
+                {
+                    mehanizmcalkulyatora.Sbros();
+                    txtOutput.Text = "0";
+                }
+            }
+            private void btn_obratnoe_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    if (mehanizmcalkulyatora.resultatOutput == "0")
+                    {
+                        txtOutput.Text = "Делить на ноль нельзя";
+                        mehanizmcalkulyatora.resultatOutput = "";
+                    }
+                    else
+                    {
+                        mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                        txtOutput.Text = (1 / mehanizmcalkulyatora.pervoeChislo).ToString();
+                        mehanizmcalkulyatora.resultatOutput = "";
+                    }
+                }
+                catch
+                {
+                    mehanizmcalkulyatora.Sbros();
+                    txtOutput.Text = "0";
+                }
+        }
+            private void btn_korenkyb_Click(object sender, EventArgs e)
+            {
+                try
+                    {
+                        if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
+                        {
+                            mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                            txtOutput.Text = "-" + Math.Pow(mehanizmcalkulyatora.pervoeChislo * mehanizmcalkulyatora.peremennayaMinus, 1.0 / 3.0).ToString();
+                            mehanizmcalkulyatora.resultatOutput = "";
+                        }
+                        else
+                        {
+                            mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                            txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 1.0 / 3.0)).ToString();
+                            mehanizmcalkulyatora.resultatOutput = "";
+                        }
+                    }
+                catch
+                {
+                    mehanizmcalkulyatora.Sbros();
+                    txtOutput.Text = "0";
+                }
+            }
+            private void btn_factorial_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                    if (mehanizmcalkulyatora.pervoeChislo < 0)
+                    {
+                        txtOutput.Text = "Значение не может быть < 0";
+                        mehanizmcalkulyatora.resultatOutput = "";
+                    }
+                    else
+                    {
+                        if (Math.Floor(mehanizmcalkulyatora.pervoeChislo) != mehanizmcalkulyatora.pervoeChislo)
+                        {
+                            txtOutput.Text = "Значение должно быть целым";
+                            mehanizmcalkulyatora.resultatOutput = "";
+                        }
+                        else
+                        {
+                            //this.txtFactorial.Visible = true;
+                            int factorial = 1;
+                            for (int i = 1; i <= Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo); i++)
+                            {
+                                factorial *= i;
+                            }
+                            txtOutput.Text = factorial.ToString();
+                            mehanizmcalkulyatora.Sbros();
+                            //txtOutput.Text = "";
+                        }
+                    }
+                }
+                catch
+                {
+                    mehanizmcalkulyatora.Sbros();
+                    txtOutput.Text = "0";
                 }
             }
         private void btn_yravnenie_Click(object sender, EventArgs e)
             {
                 QuadEq quadEq = new QuadEq();
                 quadEq.ShowDialog();
-
             }
-
         private void обычныйToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			this.Size = new Size(320, 300);
@@ -978,7 +998,7 @@ namespace Calculator
             resultatVichisleniy = 0;
 			pervoeChislo = 0;
 			vtoroeChislo = 0;
-			resultatOutput = "0";
+			resultatOutput = "";
 			tekusheeDeystvieCalculatora = Deystvie.NeopredelDeystvie;
 			ChislosTochkoy = false;
 			dobavlenierazryada = false;			
