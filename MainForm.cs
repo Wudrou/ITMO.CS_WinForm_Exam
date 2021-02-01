@@ -4,6 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
+using System.Threading;
 
 namespace Calculator
 {
@@ -642,14 +643,25 @@ namespace Calculator
 				mehanizmcalkulyatora.Sbros();
 				txtOutput.Text = "";
 			}
-
+            private void Proverka()
+            {
+                try
+                {
+                    Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                    return;
+                }
+                catch
+                {
+                    mehanizmcalkulyatora.Sbros();
+                    txtOutput.Text = "0";
+                }
+            }
             private void btn_vkvadrat_Click(object sender, EventArgs e)
             {
-                mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
+                Proverka();
                 txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 2)).ToString();
                 mehanizmcalkulyatora.resultatOutput = "";
             }
-
             private void btn_vstepen_Click(object sender, EventArgs e)
             {
                 mehanizmcalkulyatora.DeystvieCalculatora (mehanizmcalkulyatora.Deystvie.Vstepen);
@@ -657,11 +669,11 @@ namespace Calculator
 
             private void btn_koren_Click(object sender, EventArgs e)
             {
+                Proverka();
                 if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
                 {
                     txtOutput.Text = "Значение не может быть < 0";
                     mehanizmcalkulyatora.resultatOutput = "";
-
                 }
                 else
                 {
@@ -673,6 +685,7 @@ namespace Calculator
 
             private void btn_obratnoe_Click(object sender, EventArgs e)
             {
+                Proverka();
                 if (mehanizmcalkulyatora.resultatOutput == "0")
                 {
                     txtOutput.Text = "Делить на ноль нельзя";
@@ -687,6 +700,7 @@ namespace Calculator
             }
             private void btn_korenkyb_Click(object sender, EventArgs e)
             {
+                Proverka();
                 if (Convert.ToDouble(mehanizmcalkulyatora.resultatOutput) < 0)
                 {
                     mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
@@ -699,10 +713,10 @@ namespace Calculator
                     txtOutput.Text = (Math.Pow(mehanizmcalkulyatora.pervoeChislo, 1.0/3.0)).ToString();
                     mehanizmcalkulyatora.resultatOutput = "";
                 }
-                
             }
             private void btn_factorial_Click(object sender, EventArgs e)
             {
+                Proverka();
                 mehanizmcalkulyatora.pervoeChislo = Convert.ToDouble(mehanizmcalkulyatora.resultatOutput);
                 if (mehanizmcalkulyatora.pervoeChislo < 0)
                 {
@@ -718,11 +732,11 @@ namespace Calculator
                     }
                     else
                     {
-                        this.txtFactorial.Visible = true;
+                        //this.txtFactorial.Visible = true;
                         int factorial = 1;
                         for (int i = 1; i <= Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo); i++)
                         {
-                             factorial *= i;
+                            factorial *= i;
                         }
                         txtFactorial.Text = factorial.ToString();
                         mehanizmcalkulyatora.Sbros();
@@ -730,7 +744,7 @@ namespace Calculator
                     }
                 }
             }
-            private void btn_yravnenie_Click(object sender, EventArgs e)
+        private void btn_yravnenie_Click(object sender, EventArgs e)
             {
                 QuadEq quadEq = new QuadEq();
                 quadEq.ShowDialog();
@@ -774,7 +788,7 @@ namespace Calculator
 			Umnojenie = 3,
 			Delenie = 4,
             Vstepen = 5,
-		}
+        }
 
 	/// <summary>
 	/// Объявляем и инициализируем переменную, 
@@ -964,7 +978,7 @@ namespace Calculator
             resultatVichisleniy = 0;
 			pervoeChislo = 0;
 			vtoroeChislo = 0;
-			resultatOutput = "";
+			resultatOutput = "0";
 			tekusheeDeystvieCalculatora = Deystvie.NeopredelDeystvie;
 			ChislosTochkoy = false;
 			dobavlenierazryada = false;			
