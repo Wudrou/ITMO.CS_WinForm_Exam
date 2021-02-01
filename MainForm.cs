@@ -55,6 +55,7 @@ namespace Calculator
         private Button btn_factorial;
         private Button btn_korenkyb;
         private Button btn_yravnenie;
+        private TextBox txtFactorial;
         private const string nul = "0";
 
 		public Calc()
@@ -62,8 +63,9 @@ namespace Calculator
 
 			InitializeComponent();
 			this.Size = new Size(320, 300);
-			// При запуске приложения на экране будет нуль
-			txtOutput.Text = "0";
+            this.txtFactorial.Visible = false;
+			// При запуске приложения на экране будет пусто
+			txtOutput.Text = "";
 		
 		}
 
@@ -122,6 +124,7 @@ namespace Calculator
             this.btn_factorial = new System.Windows.Forms.Button();
             this.btn_korenkyb = new System.Windows.Forms.Button();
             this.btn_yravnenie = new System.Windows.Forms.Button();
+            this.txtFactorial = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,9 +133,9 @@ namespace Calculator
             this.txtOutput.AccessibleName = "Display";
             this.txtOutput.Enabled = false;
             this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtOutput.Location = new System.Drawing.Point(25, 49);
+            this.txtOutput.Location = new System.Drawing.Point(29, 53);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(250, 26);
+            this.txtOutput.Size = new System.Drawing.Size(242, 26);
             this.txtOutput.TabIndex = 60;
             this.txtOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -470,11 +473,22 @@ namespace Calculator
             this.btn_yravnenie.Visible = false;
             this.btn_yravnenie.Click += new System.EventHandler(this.btn_yravnenie_Click);
             // 
+            // txtFactorial
+            // 
+            this.txtFactorial.Enabled = false;
+            this.txtFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFactorial.Location = new System.Drawing.Point(300, 53);
+            this.txtFactorial.Name = "txtFactorial";
+            this.txtFactorial.Size = new System.Drawing.Size(120, 26);
+            this.txtFactorial.TabIndex = 63;
+            this.txtFactorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Calc
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(450, 257);
+            this.Controls.Add(this.txtFactorial);
             this.Controls.Add(this.btn_koren);
             this.Controls.Add(this.btn_vstepen);
             this.Controls.Add(this.btn_korenkyb);
@@ -626,7 +640,7 @@ namespace Calculator
 			private void btn_sbros_Click(object sender, System.EventArgs e)
 			{
 				mehanizmcalkulyatora.Sbros();
-				txtOutput.Text = "0";
+				txtOutput.Text = "";
 			}
 
             private void btn_vkvadrat_Click(object sender, EventArgs e)
@@ -704,13 +718,15 @@ namespace Calculator
                     }
                     else
                     {
+                        this.txtFactorial.Visible = true;
                         int factorial = 1;
                         for (int i = 1; i <= Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo); i++)
                         {
                              factorial *= i;
                         }
-                        txtOutput.Text = factorial.ToString();
-                        mehanizmcalkulyatora.resultatOutput = "";
+                        txtFactorial.Text = factorial.ToString();
+                        mehanizmcalkulyatora.Sbros();
+                        txtOutput.Text = "";
                     }
                 }
             }
@@ -945,7 +961,7 @@ namespace Calculator
 
 		public static void Sbros ()
 		{
-			resultatVichisleniy = 0;
+            resultatVichisleniy = 0;
 			pervoeChislo = 0;
 			vtoroeChislo = 0;
 			resultatOutput = "";
