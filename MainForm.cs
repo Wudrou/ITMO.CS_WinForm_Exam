@@ -490,6 +490,7 @@ namespace Calculator
             // 
             // backgroundWorkerFactorial
             // 
+            this.backgroundWorkerFactorial.WorkerReportsProgress = true;
             this.backgroundWorkerFactorial.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerFactorial_DoWork);
             this.backgroundWorkerFactorial.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerFactorial_ProgressChanged);
             this.backgroundWorkerFactorial.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerFactorial_RunWorkerCompleted);
@@ -791,9 +792,9 @@ namespace Calculator
                 for (int i = 1; i <= (int)e.Argument; i++)
                 {
                     factorial *= i;
+                    Thread.Sleep(1000);
+                    backgroundWorkerFactorial.ReportProgress((int)(i*100 / (int)e.Argument));
                 }
-                BackgroundWorker worker = sender as BackgroundWorker;
-                Thread.Sleep(5000);
                 e.Result = factorial;
             }
             private void backgroundWorkerFactorial_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -803,6 +804,7 @@ namespace Calculator
             private void backgroundWorkerFactorial_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
             {
                 txtFactorial.Text = e.Result.ToString();
+                this.progressBar1.Visible = false;
             }
         private void btn_yravnenie_Click(object sender, EventArgs e)
             {
