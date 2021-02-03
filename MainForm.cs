@@ -57,6 +57,8 @@ namespace Calculator
         private Button btn_korenkyb;
         private Button btn_yravnenie;
         private TextBox txtFactorial;
+        private BackgroundWorker backgroundWorkerFactorial;
+        private ProgressBar progressBar1;
         private const string nul = "0";
 
 		public Calc()
@@ -126,6 +128,8 @@ namespace Calculator
             this.btn_korenkyb = new System.Windows.Forms.Button();
             this.btn_yravnenie = new System.Windows.Forms.Button();
             this.txtFactorial = new System.Windows.Forms.TextBox();
+            this.backgroundWorkerFactorial = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -484,11 +488,26 @@ namespace Calculator
             this.txtFactorial.TabIndex = 63;
             this.txtFactorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // backgroundWorkerFactorial
+            // 
+            this.backgroundWorkerFactorial.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerFactorial_DoWork);
+            this.backgroundWorkerFactorial.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerFactorial_ProgressChanged);
+            this.backgroundWorkerFactorial.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerFactorial_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(300, 45);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(120, 7);
+            this.progressBar1.TabIndex = 64;
+            this.progressBar1.Visible = false;
+            // 
             // Calc
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(450, 257);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.txtFactorial);
             this.Controls.Add(this.btn_koren);
             this.Controls.Add(this.btn_vstepen);
@@ -748,15 +767,15 @@ namespace Calculator
                         }
                         else
                         {
-                            //this.txtFactorial.Visible = true;
-                            int factorial = 1;
-                            for (int i = 1; i <= Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo); i++)
+                            if (backgroundWorkerFactorial.IsBusy != true)
                             {
-                                factorial *= i;
+                                this.txtFactorial.Visible = true;
+                                this.progressBar1.Visible = true;
+                                int fact = Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo);
+                                backgroundWorkerFactorial.RunWorkerAsync(fact);
+                                mehanizmcalkulyatora.Sbros();
+                                txtOutput.Text = "";
                             }
-                            txtOutput.Text = factorial.ToString();
-                            mehanizmcalkulyatora.Sbros();
-                            //txtOutput.Text = "";
                         }
                     }
                 }
@@ -765,6 +784,25 @@ namespace Calculator
                     mehanizmcalkulyatora.Sbros();
                     txtOutput.Text = "0";
                 }
+            }
+            private void backgroundWorkerFactorial_DoWork(object sender, DoWorkEventArgs e)
+            {
+                int factorial = 1;
+                for (int i = 1; i <= (int)e.Argument; i++)
+                {
+                    factorial *= i;
+                }
+                BackgroundWorker worker = sender as BackgroundWorker;
+                Thread.Sleep(5000);
+                e.Result = factorial;
+            }
+            private void backgroundWorkerFactorial_ProgressChanged(object sender, ProgressChangedEventArgs e)
+            {
+                this.progressBar1.Value = e.ProgressPercentage;
+            }
+            private void backgroundWorkerFactorial_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+            {
+                txtFactorial.Text = e.Result.ToString();
             }
         private void btn_yravnenie_Click(object sender, EventArgs e)
             {
@@ -794,7 +832,7 @@ namespace Calculator
             this.btn_korenkyb.Visible = true;
             this.btn_yravnenie.Visible = true;
         }
-    }
+}
     class mehanizmcalkulyatora
 	{
 	/// <summary>
