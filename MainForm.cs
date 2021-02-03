@@ -761,7 +761,7 @@ namespace Calculator
                     }
                     else
                     {
-                        if (Math.Floor(mehanizmcalkulyatora.pervoeChislo) != mehanizmcalkulyatora.pervoeChislo)
+                        if (Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo) != mehanizmcalkulyatora.pervoeChislo)
                         {
                             txtOutput.Text = "Значение должно быть целым";
                             mehanizmcalkulyatora.resultatOutput = "";
@@ -793,8 +793,8 @@ namespace Calculator
                 {
                     factorial *= i;
                     Thread.Sleep(1000);
-                    backgroundWorkerFactorial.ReportProgress((int)(i*100 / (int)e.Argument));
-                }
+                    backgroundWorkerFactorial.ReportProgress((int)(i * 100 / (int)e.Argument));
+            }
                 e.Result = factorial;
             }
             private void backgroundWorkerFactorial_ProgressChanged(object sender, ProgressChangedEventArgs e)
