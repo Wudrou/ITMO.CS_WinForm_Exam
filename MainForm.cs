@@ -792,9 +792,13 @@ namespace Calculator
                 for (int i = 1; i <= (int)e.Argument; i++)
                 {
                     factorial *= i;
+                }
+                int j = 5;
+                for (int i = 1; i <= j; i++)
+                {
                     Thread.Sleep(1000);
-                    backgroundWorkerFactorial.ReportProgress((int)(i * 100 / (int)e.Argument));
-            }
+                    backgroundWorkerFactorial.ReportProgress(i * 100 / j);
+                }
                 e.Result = factorial;
             }
             private void backgroundWorkerFactorial_ProgressChanged(object sender, ProgressChangedEventArgs e)
