@@ -486,9 +486,9 @@ namespace Calculator
             // 
             this.txtFactorial.Enabled = false;
             this.txtFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtFactorial.Location = new System.Drawing.Point(300, 53);
+            this.txtFactorial.Location = new System.Drawing.Point(288, 53);
             this.txtFactorial.Name = "txtFactorial";
-            this.txtFactorial.Size = new System.Drawing.Size(120, 26);
+            this.txtFactorial.Size = new System.Drawing.Size(150, 26);
             this.txtFactorial.TabIndex = 63;
             this.txtFactorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -501,9 +501,9 @@ namespace Calculator
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(300, 45);
+            this.progressBar1.Location = new System.Drawing.Point(288, 45);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(120, 7);
+            this.progressBar1.Size = new System.Drawing.Size(150, 7);
             this.progressBar1.TabIndex = 64;
             this.progressBar1.Visible = false;
             // 
@@ -777,7 +777,7 @@ namespace Calculator
                                 this.txtFactorial.Visible = true;
                                 this.progressBar1.Visible = true;
                                 this.progressBar1.Value = 0;
-                                int fact = Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo);
+                                long fact = Convert.ToInt64(mehanizmcalkulyatora.pervoeChislo);
                                 backgroundWorkerFactorial.RunWorkerAsync(fact);
                                 mehanizmcalkulyatora.Sbros();
                                 txtOutput.Text = "";
@@ -793,8 +793,8 @@ namespace Calculator
             }
             private void backgroundWorkerFactorial_DoWork(object sender, DoWorkEventArgs e)
             {
-                int factorial = 1;
-                for (int i = 1; i <= (int)e.Argument; i++)
+                long factorial = 1;
+                for (int i = 1; i <= (long)e.Argument; i++)
                 {
                     factorial *= i;
                 }
