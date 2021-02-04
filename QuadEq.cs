@@ -9,9 +9,13 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
+#pragma warning disable CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
     public partial class QuadEq : Form
+#pragma warning restore CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
     {
+#pragma warning disable CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
         public QuadEq()
+#pragma warning restore CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
         {
             InitializeComponent();
             this.Size = new Size(400, 150);

@@ -8,8 +8,10 @@ using System.Threading;
 
 namespace Calculator
 {
-		public class Calc : System.Windows.Forms.Form
-	{
+#pragma warning disable CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
+    public class Calc : System.Windows.Forms.Form
+#pragma warning restore CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
+    {
 		private System.Windows.Forms.TextBox txtOutput;
 		private System.Windows.Forms.Button btn_sbros;
 		private System.Windows.Forms.Button btnChangesign;
@@ -61,8 +63,10 @@ namespace Calculator
         private ProgressBar progressBar1;
         private const string nul = "0";
 
-		public Calc()
-		{
+#pragma warning disable CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
+        public Calc()
+#pragma warning restore CS1591 // Отсутствует комментарий XML для открытого видимого типа или члена
+        {
 
 			InitializeComponent();
 			this.Size = new Size(320, 300);
