@@ -798,11 +798,10 @@ namespace Calculator
                 {
                     factorial *= i;
                 }
-                int j = 5;
-                for (int i = 1; i <= j; i++)
+                for (int i = 1; i <= 5; i++)
                 {
                     Thread.Sleep(1000);
-                    backgroundWorkerFactorial.ReportProgress(i * 100 / j);
+                    backgroundWorkerFactorial.ReportProgress(i * 20);
                 }
                 e.Result = factorial;
             }
