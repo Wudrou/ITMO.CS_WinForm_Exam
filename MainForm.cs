@@ -772,6 +772,7 @@ namespace Calculator
                             {
                                 this.txtFactorial.Visible = true;
                                 this.progressBar1.Visible = true;
+                                this.progressBar1.Value = 0;
                                 int fact = Convert.ToInt32(mehanizmcalkulyatora.pervoeChislo);
                                 backgroundWorkerFactorial.RunWorkerAsync(fact);
                                 mehanizmcalkulyatora.Sbros();
