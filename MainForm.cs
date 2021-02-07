@@ -141,10 +141,10 @@ namespace Calculator
             // 
             this.txtOutput.AccessibleName = "Display";
             this.txtOutput.Enabled = false;
-            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtOutput.Location = new System.Drawing.Point(29, 53);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(242, 26);
+            this.txtOutput.Size = new System.Drawing.Size(242, 22);
             this.txtOutput.TabIndex = 60;
             this.txtOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -485,10 +485,10 @@ namespace Calculator
             // txtFactorial
             // 
             this.txtFactorial.Enabled = false;
-            this.txtFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtFactorial.Location = new System.Drawing.Point(288, 53);
+            this.txtFactorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFactorial.Location = new System.Drawing.Point(277, 53);
             this.txtFactorial.Name = "txtFactorial";
-            this.txtFactorial.Size = new System.Drawing.Size(150, 26);
+            this.txtFactorial.Size = new System.Drawing.Size(170, 22);
             this.txtFactorial.TabIndex = 63;
             this.txtFactorial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -501,9 +501,9 @@ namespace Calculator
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(288, 45);
+            this.progressBar1.Location = new System.Drawing.Point(277, 45);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(150, 7);
+            this.progressBar1.Size = new System.Drawing.Size(170, 7);
             this.progressBar1.TabIndex = 64;
             this.progressBar1.Visible = false;
             // 
