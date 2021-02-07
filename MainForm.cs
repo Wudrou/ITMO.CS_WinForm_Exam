@@ -777,7 +777,7 @@ namespace Calculator
                                 this.txtFactorial.Visible = true;
                                 this.progressBar1.Visible = true;
                                 this.progressBar1.Value = 0;
-                                long fact = Convert.ToInt64(mehanizmcalkulyatora.pervoeChislo);
+                                double fact = Convert.ToDouble(mehanizmcalkulyatora.pervoeChislo);
                                 backgroundWorkerFactorial.RunWorkerAsync(fact);
                                 mehanizmcalkulyatora.Sbros();
                                 txtOutput.Text = "";
@@ -793,8 +793,8 @@ namespace Calculator
             }
             private void backgroundWorkerFactorial_DoWork(object sender, DoWorkEventArgs e)
             {
-                long factorial = 1;
-                for (int i = 1; i <= (long)e.Argument; i++)
+                double factorial = 1;
+                for (int i = 1; i <= (double)e.Argument; i++)
                 {
                     factorial *= i;
                 }
