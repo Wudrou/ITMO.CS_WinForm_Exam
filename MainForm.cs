@@ -548,7 +548,7 @@ namespace Calculator
             this.MaximizeBox = false;
             this.Name = "Calc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Калькулятор 1.0";
+            this.Text = "Калькулятор 2.0";
             this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
