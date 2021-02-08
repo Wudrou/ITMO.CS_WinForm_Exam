@@ -777,8 +777,7 @@ namespace Calculator
                                 this.txtFactorial.Visible = true;
                                 this.progressBar1.Visible = true;
                                 this.progressBar1.Value = 0;
-                                double fact = Convert.ToDouble(mehanizmcalkulyatora.pervoeChislo);
-                                backgroundWorkerFactorial.RunWorkerAsync(fact);
+                                backgroundWorkerFactorial.RunWorkerAsync(Convert.ToDouble(mehanizmcalkulyatora.pervoeChislo));
                                 mehanizmcalkulyatora.Sbros();
                                 txtOutput.Text = "";
                             }
