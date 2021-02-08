@@ -775,6 +775,7 @@ namespace Calculator
                             if (backgroundWorkerFactorial.IsBusy != true)
                             {
                                 this.txtFactorial.Visible = true;
+                                txtFactorial.Text = "";
                                 this.progressBar1.Visible = true;
                                 this.progressBar1.Value = 0;
                                 backgroundWorkerFactorial.RunWorkerAsync(Convert.ToDouble(mehanizmcalkulyatora.pervoeChislo));
