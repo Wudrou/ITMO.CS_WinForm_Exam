@@ -360,7 +360,7 @@ namespace Calculator
             this.видToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(450, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(450, 28);
             this.menuStrip1.TabIndex = 61;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -370,16 +370,16 @@ namespace Calculator
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обычныйToolStripMenuItem,
             this.инженерныйToolStripMenuItem});
-            this.видToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.видToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // обычныйToolStripMenuItem
             // 
             this.обычныйToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.обычныйToolStripMenuItem.Name = "обычныйToolStripMenuItem";
-            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.обычныйToolStripMenuItem.Text = "Обычный";
             this.обычныйToolStripMenuItem.Click += new System.EventHandler(this.обычныйToolStripMenuItem_Click);
             // 
@@ -387,7 +387,7 @@ namespace Calculator
             // 
             this.инженерныйToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.инженерныйToolStripMenuItem.Name = "инженерныйToolStripMenuItem";
-            this.инженерныйToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.инженерныйToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.инженерныйToolStripMenuItem.Text = "Инженерный";
             this.инженерныйToolStripMenuItem.Click += new System.EventHandler(this.инженерныйToolStripMenuItem_Click);
             // 
